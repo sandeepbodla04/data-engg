@@ -1,0 +1,1146 @@
+CREATE A TABLE
+WHY WE NEED TABLE--> TO STORE DATA
+WHY WE WANT TO STORE DATA?-->ANALYSE DATA,TO DO CALULATION,MANAGE BUSINESS EFFECTIVELY,TO GENERATE REPORTS
+CREATE TABLE TABLE<SQL ENGINE>
+SPACE OPTIMIZATION,CALCULATIONS HAPPEN
+PRIMARY KEY/KEY--UNIQUELY IDENTIFIES RECORDS-->EMPLOYEEID,VOTER ID CARD,AADHAR CARD,REGISTRATION NUMBER,USN
+------CREATE TABLE SYNTAX------------------------------------
+CREATE TABLE employee
+(
+    employee_id NUMBER,
+    first_name VARCHAR2(50) NOT NULL,
+    last_name VARCHAR2(5) NOT NULL,
+    PRIMARY KEY(EMPLOYEE_id)
+);
+
+-----CREATING A TABLE WITH COMPOSITE PRIMARY KEY--------------
+CREATE TABLE employee
+(
+    employee_id NUMBER,
+    first_name VARCHAR2(5),
+    last_name VARCHAR2(5),
+    PRIMARY KEY(FIRST_NAME,LAST_NAME)
+);
+
+---------IMPOSING CONSTRAINTS AT TABLE LEVEL-------------------
+CREATE TABLE EMP (ID NUMBER UNIQUE,NAME VARCHAR2(10));
+As per the above constraint id must be UNIQUE and if we are trying to insert duplicate ids DB will throw error message.
+
+CREATE TABLE EMP(ID NUMBER,NAME VARCHAR2(5),CHECK (ID > 5));
+-----KEYWORD TO CHECK THE TABLE STRUCTURE---------------------
+DESC EMPLOYEE;
+
+------INSERTING DATA IN A TABLE WITH COLUMN NAMES-------------
+insert into employee(employee_id,first_name,last_name) values(3,'Raj','Kumar');
+insert into employee(employee_id,first_name,last_name) values(4,'abdul','khan');
+insert into employee(employee_id,first_name,last_name) values(null,'asif','khan');
+
+------INSERTING DATA IN LIMITED COLUMNS ONLY-------------------
+INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME) VALUES(1,'A');
+Here we are not inserting data in last_name column
+
+-------INSERTING DATA IN A TABLE WITHOUT USING COLUMN NAMES------
+insert into employee values(2,'A','B');
+
+------INSERTING MULTIPLE RECORDS IN A TABLE IN A SINGLE GO---------
+Oracle SYNTAX--------
+create table emp(name varchar2(10));
+INSERT ALL
+INTO EMP VALUES('MD,KHAN')
+INTO EMP VALUES('MD,ASLAM')
+INTO EMP VALUES('TOM,HARY')
+SELECT * FROM DUAL;
+
+MySQL,SQL Server,PostgreSQL-------
+Create table emp(firstname varchar(10),lastname varchar(10));
+Insert into emp(firstname,lastname) values
+('MD,KHAN'),
+('MD,ASLAM');
+
+------INSERTING BLANK DATA IN A COLUMN----------------------------
+INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME,LAST_NAME) VALUES(2,'A','');
+
+------------VIOLATING UNIQUE CONSTRAINT ON PRIMARY KEY COLUMN-------------------
+INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME,LAST_NAME) VALUES(2,'B','');
+This will throw an error message as already we have inserted a record with employee_id = 2,as employee_id is a pk for this table.
+
+----------------TRYING TO INSERT CHARACTER IN INTEGER COLUMN------------
+insert into employee values('TRY','A','B');
+THIS WILL THROW AN ERROR MESSAGE
+
+--------------INSERTING NULL AS A VALID DATA-----------------------
+INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME,LAST_NAME) VALUES(6,'null','');
+
+--------------INSERT DATE DATA SYNTAX---------------------------------
+INSERT INTO EMP VALUES('A','B',TO_DATE('06-FEB-1990','DD-MON-YYYY'));
+INSERT INTO EMP VALUES('A','B',TO_DATE('07-02-1990','DD-MM-YYYY'));
+
+--------------INSERTING CHARACTER DATA IN INT DATA TYPE----------------
+create table emp(id int);
+insert into emp values('a');
+Above code will throw error message
+
+--------------INSERTING DECIMAL DATA IN INT DATA TYPE-----------------------
+create table emp(id INT);
+insert into emp values(1.123);
+This will round the value to 1 and stores it as INT data type does not accepts decimal data because INT data type is similar to NUMBER(38,0).
+But on the similar line NUMBER data type will accept decimal data.
+
+--------------INSERTING DECIMAL DATA IN NUMBER DATA TYPE-----------------------
+create table emp(id NUMBER);
+insert into emp values(1.123);
+
+Data will be loaded SUCCESSFULLY.Because in this case NUMBER data type accepts decimal data as well.
+--------------INSERTING SPECIAL CHARACTERS-----------------------------------------
+create table emp(id varchar2(5));--Even if it is of char datatype special characters can be inserted.
+insert into emp values('!');
+insert into emp values('@');
+
+Data loaded successfully
+
+-------------INSERTING DATA WITHOUT MENTIONING CHAR DATATYPE SIZE------------
+create table emp(id char);
+insert into emp values('1');
+
+Data inserted succesfully-This is because by default char is of 1 size.
+insert into emp values('12');
+Throws error message because we are trying to store data of more than 1 size.
+
+-----------INSERTING DATA FROM ONE TABLE INTO ANOTHER TABLE----------------
+create table testing(id int,name varchar2(5));
+insert into testing select * from emp;
+Data will be inserted into testing table from emp table
+
+-----------------ALTER-----------------------
+Please note column must be empty before changing any data type of that particular column
+1.
+ALTER TABLE employee MODIFY first_name varchar(50) NULL;
+
+2.
+ALTER TABLE employee MODIFY first_name varchar(50) NOT NULL;
+
+3.
+ALTER TABLE employee DROP primary key;
+
+4.
+ALTER TABLE employee ADD CONSTRAINT PK_EMPLOYEE PRIMARY KEY (first_name);
+ALTER TABLE employee ADD CONSTRAINT PK_EMPLOYEE PRIMARY KEY (first_name,LAST_NAME);
+
+5.
+ALTER TABLE employee ADD DateOfBirth date;
+ALTER TABLE employee MODIFY LAST_name varchar(5) NULL;
+
+6.
+ALTER TABLE EMP RENAME TO NEMP;
+
+--------------------------------------------------------
+
+---------------KEYWORD TO DROP TABLE FROM DB------------------
+DROP TABLE EMPLOYEE;
+
+--------------DIFF BETWEEN BLANK,ZERO AND NULL---------------------
+
+---------------ANY------------------
+Below query will fetch the details of those employees whose salary is greater than any of the salary mentioned in subquery.
+select * from dept where salary > any(select distinct salary from dept where salary in (700,800,900));
+
+DEPT_ID	DEPTNAME	EMPNAME	SALARY
+3	TECH	I	900
+3	TECH	H	800
+
+----------------ALL-------------------
+select * from dept where salary > all(select distinct salary from dept where salary in (700,800));
+Below query will fetch the details of employees whose salary is greater than all the salaries mentioned in sub query.
+
+DEPT_ID	DEPTNAME	EMPNAME	SALARY
+3	TECH	I	900
+
+--------------INSERTING NULL IN A COLUMN WITH COMPOSIE PRIMARY KEY CONSTRAINT-----------
+INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME,LAST_NAME) VALUES(1,'A',NULL);
+This will throw an error message as we are trying to insert NULL data in LAST_NAME column which is a part of composite primary key.
+
+---------------INSERTING DATA WITH CHARACTER SIZE GREATER THAN SPECIFIED IN TABLE/COLUMN STRUCTURE------
+INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME,LAST_NAME) VALUES(1,'ABCDEF','A');
+This will throw an error message as we are trying to insert data with character size more than 5 characters for FIRST_NAME column.
+
+---------------INSERTING DATE COLUMN-----------------
+CREATE TABLE EMP(DOB DATE);
+INSERT INTO EMP VALUES(TO_DATE('08-02-1990','DD-MM-YYYY'));
+
+---------------QUERY TO SEARCH FOR BLANK RECORDS--------------------
+SELECT * FROM EMPLOYEE where TRIM(last_name) IS NULL;
+
+---------------FETCH ALL RECORDS WITH EVEN ID NUMBER-----------------------
+SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2) = 0;
+
+---------------FETCH ALL RECORDS WITH ODD ID NUMBER-----------------------
+SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2) = 1;
+
+---------------COUNT FLAVOUR------------------------------------
+SELECT COUNT(*),COUNT(FIRST_NAME),COUNT(DISTINCT FIRST_NAME),COUNT(DISTINCT DOB) FROM EMP;
+
+---------------DUPLICATE CHECK---------------------------------
+SELECT FIRST_NAME,COUNT(*) FROM EMP HAVING COUNT(*) > 1 GROUP BY FIRST_NAME;
+SELECT FIRST_NAME,LAST_NAME,COUNT(*) FROM EMP HAVING COUNT(*) > 1 GROUP BY FIRST_NAME,LAST_NAME ORDER BY FIRST_NAME;
+SELECT FIRST_NAME,LAST_NAME,DOB,COUNT(*) FROM EMP HAVING COUNT(*) > 1 GROUP BY FIRST_NAME,LAST_NAME,DOB ORDER BY FIRST_NAME;
+
+---------------BELOW QUERY WILL FETCH ONLY 1ST ROW------------
+SELECT * FROM 
+(
+SELECT ROWNUM,CITY,LENGTH(CITY)LEN FROM STATION WHERE LENGTH(CITY) = (SELECT MIN(LENGTH(CITY)) FROM STATION)ORDER BY CITY
+) 
+WHERE ROWNUM = 1;
+
+---------------ALIAS--------------------------------------------
+SELECT * FROM		
+(		
+SELECT FIRST_NAME,LAST_NAME,SALARY,(10 * SALARY)/100 TAX FROM EMP		
+)		
+WHERE TAX = '10';		
+
+Above query shows me the use of alias
+----------------MINUS-----------------------------------------
+SELECT ID FROM EMP
+MINUS
+SELECT ID FROM STUD;
+
+MINUS FAILS TO CATCH DUPLICATES.SO MINUS By DEFAULT WORKS ON DISTINCT DATA.
+
+SELECT DISTINCT ID FROM EMP
+MINUS
+SELECT DISTINCT ID FROM STUD;
+
+ABOVE QUERY DOES NOT MAKE ANY SENSE BECAUSE DUPLICATE IS OF NO USE IN MINUS QUERY.BECAUSE BY DEFAULT MINUS WORKS ON DISTINCT DATA FROM EACH TABLE.
+
+select * from emp
+minus
+select * from empd;
+
+ID	NAME
+2	b
+2	 - 
+
+As per above dataset we can see that minus fetched NULL record as well if it is in scope.So minus is able to handle NULL records.
+
+------------INTERSECT--------------
+select id from empa
+ID
+0
+1
+2
+1
+0
+NULL
+
+select id from empb;
+ID
+0
+1
+1
+0
+NULL
+
+SELECT ID FROM EMPA
+INTERSECT
+SELECT ID FROM EMPB
+ID
+0
+1
+NULL
+
+Intersect avoids duplicate.This is similar to minus.
+
+---------------UNION/UNION ALL-----------------
+select id from empa
+ID
+0
+1
+2
+1
+0
+NULL
+
+select id from empb;
+ID
+0
+1
+1
+0
+NULL
+
+select id from empa
+union
+select id from empb;
+ID
+0
+1
+2
+NULL
+
+Union ignores the duplicate records.
+
+select id from empa
+union ALL
+select id from empb;
+ID
+0
+1
+2
+1
+0
+0
+1
+1
+0
+NULL
+NULL
+
+Union all does not ignore the duplicate records.
+
+
+CREATE TABLE EMPA(ID NUMBER);
+INSERT INTO EMPA VALUES(0);
+INSERT INTO EMPA VALUES(0);
+INSERT INTO EMPA VALUES(1);
+INSERT INTO EMPA VALUES(1);
+INSERT INTO EMPA VALUES(2);
+INSERT INTO EMPA VALUES(2);
+INSERT INTO EMPA VALUES(NULL);
+SELECT * FROM EMPA;
+
+CREATE TABLE EMPB(ID NUMBER);
+INSERT INTO EMPB VALUES(0);
+INSERT INTO EMPB VALUES(0);
+INSERT INTO EMPB VALUES(1);
+INSERT INTO EMPB VALUES(1);
+INSERT INTO EMPB VALUES(1);
+INSERT INTO EMPB VALUES(3);
+INSERT INTO EMPB VALUES(3);
+INSERT INTO EMPB VALUES(NULL);
+SELECT * FROM EMPB;
+
+SELECT ID FROM EMPA
+INTERSECT
+SELECT ID FROM EMPB;
+
+SELECT ID FROM EMPA
+UNION
+SELECT ID FROM EMPB;
+
+SELECT ID FROM EMPA
+UNION ALL
+SELECT ID FROM EMPB;
+----------------NVL---------------
+SELECT ID,NAME,NVL(ADDRESS,'NA') FROM STUD;
+
+------CONCATENATE-----------------
+CREATE TABLE EMPC(FIRSTNAME VARCHAR2(10),LASTNAME VARCHAR2(10));
+INSERT INTO EMPC VALUES('MD','KHAN');
+INSERT INTO EMPC VALUES('RAJ','KUMAR');
+SELECT FIRSTNAME,LASTNAME,FIRSTNAME||' '||LASTNAME FULLNAME,CONCAT(CONCAT(FIRSTNAME,' '),LASTNAME)FULLNAME FROM EMPC;
+
+------COALESCE-----------
+
+create table empd(firstname varchar2(10),middlename varchar2(10),lastname varchar2(10));
+insert into empd values('A',NULL,NULL);
+insert into empd values(NULL,'B',NULL);
+insert into empd values(NULL,NULL,'C');
+SELECT FIRSTNAME,MIDDLENAME,LASTNAME,COALESCE(FIRSTNAME,MIDDLENAME,LASTNAME) FROM EMPD;
+
+-----------SUBSTR/INSTR-----------
+create table emp(name varchar2(10));
+insert into emp values('Md,khan');
+insert into emp values('Raj,kumar');
+insert into emp values('Abdul');
+
+SELECT NAME,INSTR(NAME,',') FROM EMP;
+NAME	   INSTR(NAME,',')
+Md,khan	   3
+Raj,kumar  4
+Abdul	   0
+
+Above query shows the position of ',' in name column.
+
+select substr(name,1,instr(name,',')-1) firstname,substr(name,instr(name,',') + 1)lastname,INSTR(NAME,',')POS from emp;
+FIRSTNAME	LASTNAME	POS
+Md	        khan	    3
+Raj	        kumar	    4
+ - 	        Abdul	    0
+
+select firstname,lastname,pos,
+case when firstname is null then lastname else firstname end firstname,
+case when firstname is null then null else lastname end lastname 
+from
+(
+select substr(name,1,instr(name,',')-1) firstname,substr(name,instr(name,',') + 1)lastname,INSTR(NAME,',')POS from emp
+);
+
+FIRSTNAME	LASTNAME	POS	FIRSTNAME	LASTNAME
+Md	khan	3	Md	khan
+Raj	kumar	4	Raj	kumar
+ - 	Abdul	0	Abdul	 - 
+----------------BETWEEN-------------
+
+----------------CHARINDEX--------------
+SELECT CHARINDEX('t', CUSTOMERNAME) FROM CUSTOMERS;
+FETCHED THE POSITION OF CHARACTER 't' IN CUSTOMERNAME COLUMN.
+PLEASE NOTE ONLY THE FIRST OCCURENCE OF CHARACTER WILL BE CAPTURED.
+
+--------string_split-----------
+create table test(id int,name varchar(50));
+insert into test values(1,'AB,CD,EF');
+insert into test values(2,'India,US');
+select value name
+from test cross apply string_split(name,',') ;
+
+Output:
+Name
+AB
+CD
+EF
+India
+US
+
+As per the above query data seperated by comma in NAME column are converted in rows/records.This will be executed in Microsoft SQL Server DB.
+-------------UPDATE--------------------
+UPDATE EMP SET LAST_NAME = 'X';			
+UPDATE EMP SET LAST_NAME = 'B' WHERE FIRST_NAME = 'A';			
+UPDATE EMP SET FIRST_NAME = 'D' WHERE FIRST_NAME IS NULL;			
+UPDATE EMP SET GENDER = 'M' WHERE LAST_NAME = 'X';			
+UPDATE EMP SET DOB = TO_DATE('08-FEB-1990','DD-MON-YYYY') WHERE FIRST_NAME = 'D';			
+
+update emp set gender = case when name ='a' then 'f' else 'm' end;
+above query will swap gender data from m to f and f to m.
+
+update emp 
+set gender = case 
+when name ='a' then 'f'
+when name = 'b' then 'm' 
+end;
+
+update emp 
+set gender = case 
+when name ='a' then 'a'
+when name = 'b' then 'b'
+else 'c'
+end;
+
+----------LIMIT---------
+SELECT * FROM Customers LIMIT 2;--Try this syntax in w3schools(MySQL syntax)
+
+Below syntax is for Oracle
+SELECT * FROM stud order by id desc
+FETCH FIRST 4 ROWS ONLY;
+
+-------------CASE-------------------
+select id,name,case when name = 'a' then id+10 else id end test from emp;
+ID	NAME	TEST
+1	a	11
+2	b	2
+2	b	2
+
+Below example illustrates use of case in order by clause.
+CREATE TABLE COUNTRY(NAME VARCHAR2(10));
+INSERT INTO COUNTRY VALUES('INDIA');
+INSERT INTO COUNTRY VALUES('NEPAL');
+INSERT INTO COUNTRY VALUES('CHINA');
+INSERT INTO COUNTRY VALUES('PAKISTAN');
+INSERT INTO COUNTRY VALUES('SRI LANKA');
+INSERT INTO COUNTRY VALUES('AFGHANISTAN');
+INSERT INTO COUNTRY VALUES('UNITED KINGDOM');
+INSERT INTO COUNTRY VALUES('RUSSIA');
+
+SELECT * FROM COUNTRY
+ORDER BY CASE WHEN NAME = 'INDIA' THEN 1 END,NAME DESC;
+
+SELECT * FROM COUNTRY
+ORDER BY 
+CASE 
+WHEN NAME = 'INDIA' THEN 1 
+WHEN NAME = 'RUSSIA' THEN 2 
+WHEN NAME = 'NEPAL' THEN 3 
+END,
+NAME DESC;
+
+----JOINS----
+As per the below result set we can observe that null records are not fetched or NULLS are ignored during joins.
+create table studid(id number);
+insert into studid values(1);
+insert into studid values(1);
+insert into studid values(null);
+insert into studid values(null);
+
+create table empid(empid number);
+insert into empid values(1);
+insert into empid values(1);
+insert into empid values(null);
+insert into empid values(null);
+
+select a.id,b.empid
+from studid a join empid b
+on a.id = b.empid;
+
+ID	EMPID
+1	1
+1	1
+1	1
+1	1
+
+------------DELETE---------------------
+
+-------------RANK---------------
+create table stud(name varchar2(10),marks number);
+insert into stud values('A',10);
+insert into stud values('B',15);
+insert into stud values('C',12);
+insert into stud values('D',11);
+insert into stud values('E',30);
+insert into stud values('F',20);
+SELECT * FROM STUD;
+select name,marks,rank()over(order by marks)rank from stud;
+select name,marks,rank()over(order by marks desc)rank from stud;
+
+-------------DENSE_RANK---------------
+create table stud(name varchar2(10),marks number);
+insert into stud values('A',10);
+insert into stud values('B',15);
+insert into stud values('C',12);
+insert into stud values('D',11);
+insert into stud values('E',30);
+insert into stud values('F',20);
+insert into stud values('G',10);
+insert into stud values('H',15);
+insert into stud values('I',11);
+SELECT * FROM STUD;
+select name,marks,rank()over(order by marks)rank,DENSE_rank()over(order by marks)DENSE_rank from stud;
+
+
+create table student(name varchar2(10),SUBJECT VARCHAR2(10),marks number);
+insert into student values('A','PHY',10);
+insert into student values('B','PHY',15);
+insert into student values('C','PHY',20);
+insert into student values('D','PHY',05);
+
+insert into student values('A','CHE',15);
+insert into student values('B','CHE',30);
+insert into student values('C','CHE',10);
+insert into student values('D','CHE',30);
+
+insert into student values('A','MATH',20);
+insert into student values('B','MATH',30);
+insert into student values('C','MATH',15);
+insert into student values('D','MATH',10);
+
+select name,subject,marks, 
+rank()over(partition by name order by marks desc)rank
+from student;
+
+-----------nth Highest Salary---------------
+create table emp(id number,name varchar2(10),salary number);
+insert into emp values(1,'A',100);
+insert into emp values(1,'B',600);
+insert into emp values(1,'C',500);
+insert into emp values(1,'D',300);
+insert into emp values(1,'E',200);
+insert into emp values(1,'F',600);
+SELECT * FROM EMP;
+
+SELECT A.ID,A.NAME,A.SALARY 
+FROM EMP A
+WHERE 1 = (SELECT COUNT( DISTINCT SALARY) FROM EMP B WHERE B.SALARY > A.SALARY); 
+
+-------------nth Highest Salary Deptwise----------
+create table emp(id number,name varchar2(10),dept varchar2(10),salary number);
+insert into emp values(1,'A','HR',100);
+insert into emp values(1,'B','HR',600);
+insert into emp values(1,'C','HR',600);
+insert into emp values(1,'D','HR',500);
+insert into emp values(1,'H','TECH',300);
+insert into emp values(1,'E','TECH',200);
+insert into emp values(1,'F','TECH',600);
+insert into emp values(1,'G','TECH',600);
+insert into emp values(1,'H','SALES',300);
+insert into emp values(1,'I','SALES',400);
+insert into emp values(1,'J','SALES',600);
+insert into emp values(1,'K','SALES',600);
+
+
+SELECT A.ID,A.DEPT,A.NAME,A.SALARY 
+FROM EMP A
+WHERE 1 = (SELECT COUNT(DISTINCT SALARY) FROM EMP B WHERE B.SALARY > A.SALARY AND A.DEPT = B.DEPT); 
+
+-----------ROLL UP----------------------
+select name,sum(salary) from emp group by rollup (name);
+NAME	SUM(SALARY)
+a	600
+b	600
+ - 	1200--This row gives the sum of all salary.This was done with the help of Rollup keyword.
+ 
+SELECT ID,NAME,SUM(MARKS) FROM COLLEGE GROUP BY ROLLUP (ID,NAME);
+ID	NAME	SUM(MARKS)
+1	EC	1500
+1	EC1	100
+1	 - 	1600--This record shows the total sum of marks group by id and name.
+2	CS	1600
+2	CS1	100
+2	 - 	1700--This record shows the total sum of marks group by id and name.
+ - 	 - 	5100--This record shows the total sum of marks
+ 
+----------------WINDOW FUNCTION SUM-----------------
+Q.Write a query to show the total marks secured by all  student alongwith other subjects marks.
+SELECT ID,NAME,MARKS,SUM(MARKS)OVER()TOTAL_MARKS FROM EMP;
+ID	NAME	MARKS	TOTAL_MARKS
+1	A	    100	    450
+2	B	    150	    450
+3	C	    200	    450
+
+Above query will fetch sum of marks obtained by all the students.
+----------------------------------------------------------
+CREATE TABLE STUD(ID NUMBER,NAME VARCHAR2(10),SEMESTER NUMBER,MARKS NUMBER);
+INSERT INTO STUD VALUES(1,'A',2,50,'CHEMISTRY');
+SELECT * FROM STUD ORDER BY ID,SEMESTER;
+
+SELECT ID,NAME,SEMESTER,SUBJECT,MARKS,
+SUM(MARKS)OVER(),
+SUM(MARKS)OVER(PARTITION BY ID),
+SUM(MARKS)OVER(PARTITION BY ID,SUBJECT),
+SUM(MARKS)OVER(ORDER BY ID)
+FROM STUD
+ORDER BY ID,NAME,SEMESTER,SUBJECT;
+
+ALTER TABLE STUD ADD SUBJECT VARCHAR2(10);
+ID	NAME	SEMESTER	SUBJECT	MARKS	SUM(MARKS)OVER()	SUM(MARKS)OVER(PARTITIONBYID)	SUM(MARKS)OVER(PARTITIONBYID,SUBJECT)	SUM(MARKS)OVER(ORDERBYID)
+1	A	1	CHEMISTRY	60	370	210	110	210
+1	A	1	PHYSICS	10	370	210	100	210
+1	A	2	CHEMISTRY	50	370	210	110	210
+1	A	2	PHYSICS	20	370	210	100	210
+1	A	3	PHYSICS	30	370	210	100	210
+1	A	4	PHYSICS	40	370	210	100	210
+2	B	1	PHYSICS	10	370	160	160	370
+2	B	2	PHYSICS	20	370	160	160	370
+2	B	3	PHYSICS	30	370	160	160	370
+2	B	4	PHYSICS	40	370	160	160	370
+2	B	5	PHYSICS	60	370	160	160	370
+
+-------------CUMULATIVE SUM----------------------- 
+SELECT ID,SALARY,SUM(SALARY)OVER(ORDER BY ID DESC),SUM(SALARY)OVER(ORDER BY ID) FROM DEPT;
+ID	SALARY	SUM(SALARY)OVER(ORDERBYIDDESC)	SUM(SALARY)OVER(ORDERBYID)
+1	10	    60	                            10
+2	20	    50	                            30
+3	30	    30	                            60
+
+
+
+
+select id,name,marks,
+rank()over(partition by name order by id)rank,
+dense_rank()over(partition by name order by id)dense_rank,
+rownum,
+sum(id)over(partition by name)total_sum,
+sum(id)over()sum,
+sum(id)over(order by name),
+sum(marks)over(),sum(marks)over(order by id)
+from emp;
+
+
+CREATE TABLE STUD(ID NUMBER,NAME VARCHAR2(10),SEMESTER NUMBER,SUBJECT VARCHAR2(10),MARKS NUMBER);
+INSERT INTO STUD VALUES(1,'A',1,'PHYSICS',100);
+INSERT INTO STUD VALUES(1,'A',2,'PHYSICS',150);
+INSERT INTO STUD VALUES(1,'A',3,'PHYSICS',200);
+INSERT INTO STUD VALUES(1,'A',4,'PHYSICS',250);
+
+INSERT INTO STUD VALUES(1,'A',1,'CHEMISTRY',50);
+INSERT INTO STUD VALUES(1,'A',2,'CHEMISTRY',250);
+INSERT INTO STUD VALUES(1,'A',3,'CHEMISTRY',200);
+INSERT INTO STUD VALUES(1,'A',4,'CHEMISTRY',350);
+
+INSERT INTO STUD VALUES(2,'B',1,'PHYSICS',150);
+INSERT INTO STUD VALUES(2,'B',2,'PHYSICS',250);
+INSERT INTO STUD VALUES(2,'B',3,'PHYSICS',100);
+INSERT INTO STUD VALUES(2,'B',4,'PHYSICS',200);
+
+INSERT INTO STUD VALUES(2,'B',1,'CHEMISTRY',150);
+INSERT INTO STUD VALUES(2,'B',2,'CHEMISTRY',150);
+INSERT INTO STUD VALUES(2,'B',3,'CHEMISTRY',250);
+INSERT INTO STUD VALUES(2,'B',4,'CHEMISTRY',300);
+
+-------------ROLL UP/WINDOW FUNCTION SUM/CUMULATIVE SUM------------
+CREATE TABLE STUD(ID NUMBER,NAME VARCHAR2(10),SEMESTER NUMBER,SUBJECT VARCHAR2(10),MARKS NUMBER);
+INSERT INTO STUD VALUES(1,'A',1,'PHYSICS',100);
+INSERT INTO STUD VALUES(1,'A',2,'PHYSICS',150);
+INSERT INTO STUD VALUES(1,'A',3,'PHYSICS',200);
+INSERT INTO STUD VALUES(1,'A',4,'PHYSICS',250);
+
+INSERT INTO STUD VALUES(1,'A',1,'CHEMISTRY',50);
+INSERT INTO STUD VALUES(1,'A',2,'CHEMISTRY',250);
+INSERT INTO STUD VALUES(1,'A',3,'CHEMISTRY',200);
+INSERT INTO STUD VALUES(1,'A',4,'CHEMISTRY',350);
+
+INSERT INTO STUD VALUES(2,'B',1,'PHYSICS',150);
+INSERT INTO STUD VALUES(2,'B',2,'PHYSICS',250);
+INSERT INTO STUD VALUES(2,'B',3,'PHYSICS',100);
+INSERT INTO STUD VALUES(2,'B',4,'PHYSICS',200);
+
+INSERT INTO STUD VALUES(2,'B',1,'CHEMISTRY',150);
+INSERT INTO STUD VALUES(2,'B',2,'CHEMISTRY',150);
+INSERT INTO STUD VALUES(2,'B',3,'CHEMISTRY',250);
+INSERT INTO STUD VALUES(2,'B',4,'CHEMISTRY',300);
+select * from stud;
+select id,sum(marks) from stud group by rollup (id);
+select name,sum(marks) from stud group by rollup (name);
+select name,subject,sum(marks) from stud group by rollup (name,subject);
+select semester,sum(marks) from stud group by rollup (semester);
+select semester,name,sum(marks) from stud group by rollup (semester,name);
+
+select name,subject,semester,marks,sum(marks)over() from stud;
+select name,subject,semester,marks,sum(marks)over(),sum(marks)over(order by name),sum(marks)over(order by name,subject),
+sum(marks)over(partition by name),sum(marks)over(partition by subject) from stud;
+----------LEAD/LAG----------------------------
+CREATE TABLE STUD(ID NUMBER,NAME VARCHAR2(10),SEMESTER NUMBER,SUBJECT VARCHAR2(10),MARKS NUMBER);
+INSERT INTO STUD VALUES(1,'A',1,'PHYSICS',100);
+INSERT INTO STUD VALUES(1,'A',2,'PHYSICS',150);
+INSERT INTO STUD VALUES(1,'A',3,'PHYSICS',200);
+INSERT INTO STUD VALUES(1,'A',4,'PHYSICS',250);
+
+INSERT INTO STUD VALUES(1,'A',1,'CHEMISTRY',50);
+INSERT INTO STUD VALUES(1,'A',2,'CHEMISTRY',250);
+INSERT INTO STUD VALUES(1,'A',3,'CHEMISTRY',200);
+INSERT INTO STUD VALUES(1,'A',4,'CHEMISTRY',350);
+
+INSERT INTO STUD VALUES(2,'B',1,'PHYSICS',150);
+INSERT INTO STUD VALUES(2,'B',2,'PHYSICS',250);
+INSERT INTO STUD VALUES(2,'B',3,'PHYSICS',100);
+INSERT INTO STUD VALUES(2,'B',4,'PHYSICS',200);
+
+INSERT INTO STUD VALUES(2,'B',1,'CHEMISTRY',150);
+INSERT INTO STUD VALUES(2,'B',2,'CHEMISTRY',150);
+INSERT INTO STUD VALUES(2,'B',3,'CHEMISTRY',250);
+INSERT INTO STUD VALUES(2,'B',4,'CHEMISTRY',300);
+select * from stud;
+select id,sum(marks) from stud group by rollup (id);
+select id,name,sum(marks) from stud group by rollup (id,name);
+select id,name,subject,sum(marks) from stud group by rollup (id,name,subject);
+select semester,name,sum(marks) from stud group by rollup (semester,name);
+
+select name,subject,semester,marks,sum(marks)over() from stud;
+select name,subject,semester,marks,sum(marks)over(),sum(marks)over(order by name),sum(marks)over(order by name,subject),
+sum(marks)over(partition by name),sum(marks)over(partition by subject) from stud;
+
+SELECT name,subject,marks,lead(marks,1)over(order by name),lag(marks,1)over(order by name),lead(marks,2)over(order by name),lag(marks,2)over(order by name),
+lead(marks,1)over(partition by name order by marks) from stud;
+
+---------Lead/Lag---Below data will help us to validate From_date and To_Date sequence using Lead/Lag function------
+
+create table emp(name varchar2(10),location varchar2(10),from_date date,to_date date);
+insert into emp values('A','Delhi',to_date('01012021','ddmmyyyy'),to_date('01032021','ddmmyyyy'));
+insert into emp values('A','Kolkata',to_date('01032021','ddmmyyyy'),to_date('01052021','ddmmyyyy'));
+insert into emp values('A','Hyderabad',to_date('01062021','ddmmyyyy'),to_date('01082021','ddmmyyyy'));
+insert into emp values('A','Chennai',to_date('01082021','ddmmyyyy'),NULL);
+select * from emp order by from_date,to_date;
+
+select name,location,from_date,to_date,lag_to_date,
+case when from_date = Lag_to_date then 'Matches' else 'Does Not Match' end Test
+from
+(
+select name,location,from_date,to_date,lag(to_date,1)over(order by to_date)Lag_To_Date from emp
+) where Lag_To_date is not null;
+
+--------NTILE--------------
+SELECT NAME,MARKS,SUBJECT,NTILE(4)OVER(ORDER BY MARKS desc) FROM STUD;
+
+NAME	MARKS	SUBJECT	    NTILE(4)OVER(ORDERBYMARKSDESC)
+A	    350	    CHEMISTRY	1
+B	    250	    PHYSICS	    1
+A	    250	    CHEMISTRY	2
+A	    200	    PHYSICS	    2
+B	    200	    PHYSICS	    3
+B	    150	    PHYSICS	    3
+B	    150	    CHEMISTRY	4
+A	    50	    CHEMISTRY	4
+ 
+NTILE function splits the sequence in 'n' categories.Above we have mentioned ntile(4) so marks has been distributed in 4 categories based on descneding order.
+
+-------SEQUENCE GENERATOR-----------
+CREATE SEQUENCE sequence_1
+start with 1
+increment by 1
+minvalue 0
+maxvalue 100
+cycle;
+
+DROP SEQUENCE sequence_2;
+
+Above query will create a sequence named sequence_1.
+Sequence will start from 1 and will be incremented by 1 having maximum value 100.
+Sequence will repeat itself from start value after exceeding 100
+
+CREATE SEQUENCE sequence_2
+start with 100
+increment by -1
+minvalue 1
+maxvalue 100
+cycle;
+
+CREATE TABLE EMPS
+( 
+ID number(10),
+NAME char(20)
+);
+INSERT into EMPS VALUES(sequence_2.nextval,'A');
+INSERT into EMPS VALUES(sequence_2.nextval,'B');
+SELECT * FROM EMPS;
+ID	NAME
+99	B                   
+100	A           
+
+---------------------------------------------
+
+CREATE TABLE students
+( 
+ID number(10),
+NAME char(20)
+);
+INSERT into students VALUES(sequence_1.nextval,'Ramesh');
+INSERT into students VALUES(sequence_1.nextval,'Suresh');
+select * from students;
+
+------------COLLEGE DB------------------
+create table College(deptid number,hodid number);
+insert into college values(1,1);
+insert into college values(2,2);
+insert into college values(3,3);
+insert into college values(4,4);
+select * from college;
+
+create table dept(deptid number,deptname varchar2(20));
+insert into dept values(1,'EC');
+insert into dept values(2,'CS');
+insert into dept values(3,'ME');
+insert into dept values(4,'CV');
+SELECT * FROM DEPT;
+
+create table hod(hodid number,hodname varchar2(20));
+INSERT INTO HOD VALUES(1,'EHSAN');
+INSERT INTO HOD VALUES(2,'CAROLINE');
+INSERT INTO HOD VALUES(3,'MANOJ');
+INSERT INTO HOD VALUES(4,'CHETAN');
+SELECT * FROM HOD;
+
+create table stud(studid number,studname varchar2(20),Gender varchar2(5));
+insert into stud values(1,'Bilal','M');
+insert into stud values(2,'Suresh','M');
+insert into stud values(3,'Aman','M');
+insert into stud values(4,'Swati','F');
+
+insert into stud values(5,'Saurabh','M');
+insert into stud values(6,'Abdul','M');
+insert into stud values(7,'Ankit','M');
+insert into stud values(8,'Shruti','F');
+
+insert into stud values(9,'Ahmed','M');
+insert into stud values(10,'Anup','M');
+insert into stud values(11,'Rakesh','M');
+insert into stud values(12,'Neha','F');
+
+insert into stud values(13,'Suresh','M');
+insert into stud values(14,'Mukesh','M');
+insert into stud values(15,'Majid','M');
+insert into stud values(16,'Priyanka','F');
+
+create table stud_detail(studid number,deptid number,dob date);
+INSERT INTO STUD VALUES(1,1,to_date(01012003,'ddmmyyyy'));
+INSERT INTO STUD VALUES(2,1,to_date(2011004,'ddmmyyyy'));
+INSERT INTO STUD VALUES(3,1,to_date(20102002,'ddmmyyyy'));
+INSERT INTO STUD VALUES(4,1,to_date(21012005,'ddmmyyyy'));
+
+INSERT INTO STUD VALUES(5,2,to_date(01012002,'ddmmyyyy'));
+INSERT INTO STUD VALUES(6,2,to_date(2011005,'ddmmyyyy'));
+INSERT INTO STUD VALUES(7,2,to_date(20102001,'ddmmyyyy'));
+INSERT INTO STUD VALUES(8,2,to_date(21012007,'ddmmyyyy'));
+
+INSERT INTO STUD VALUES(9,3,to_date(01012002,'ddmmyyyy'));
+INSERT INTO STUD VALUES(10,3,to_date(01012002,'ddmmyyyy'));
+INSERT INTO STUD VALUES(11,3,to_date(20102001,'ddmmyyyy'));
+INSERT INTO STUD VALUES(12,3,to_date(21012007,'ddmmyyyy'));
+
+INSERT INTO STUD VALUES(13,4,to_date(01012001,'ddmmyyyy'));
+INSERT INTO STUD VALUES(14,4,to_date(01012002,'ddmmyyyy'));
+INSERT INTO STUD VALUES(15,4,to_date(20102003,'ddmmyyyy'));
+INSERT INTO STUD VALUES(16,4,to_date(21012004,'ddmmyyyy'));
+
+select * from stud order by deptid,studid;
+
+create table marks(studid number,semester number,marks number);
+insert into marks(1,1,300);
+insert into marks(1,2,300);
+insert into marks(1,3,300);
+insert into marks(1,4,300);
+
+insert into marks(2,1,300);
+insert into marks(2,2,300);
+insert into marks(2,3,300);
+insert into marks(2,4,300);
+
+insert into marks(3,1,300);
+insert into marks(3,2,400);
+insert into marks(3,3,200);
+insert into marks(3,4,500);
+
+insert into marks(4,1,500);
+insert into marks(4,2,300);
+insert into marks(4,3,200);
+insert into marks(4,4,300);
+
+insert into marks(5,1,600);
+insert into marks(5,2,400);
+insert into marks(5,3,300);
+insert into marks(5,4,200);
+
+insert into marks(6,1,200);
+insert into marks(6,2,300);
+insert into marks(6,3,300);
+insert into marks(6,4,400);
+
+insert into marks(7,1,500);
+insert into marks(7,2,700);
+insert into marks(7,3,300);
+insert into marks(7,4,100);
+
+insert into marks(8,1,300);
+insert into marks(8,2,200);
+insert into marks(8,3,400);
+insert into marks(8,4,300);
+
+insert into marks(9,1,300);
+insert into marks(9,2,300);
+insert into marks(9,3,400);
+insert into marks(9,4,500);
+
+insert into marks(10,1,200);
+insert into marks(10,2,300);
+insert into marks(10,3,400);
+insert into marks(10,4,500);
+
+insert into marks(11,1,300);
+insert into marks(11,2,500);
+insert into marks(11,3,100);
+insert into marks(11,4,200);
+
+insert into marks(12,1,300);
+insert into marks(12,2,400);
+insert into marks(12,3,100);
+insert into marks(12,4,200);
+
+insert into marks(13,1,400);
+insert into marks(13,2,300);
+insert into marks(13,3,500);
+insert into marks(13,4,100);
+
+insert into marks(14,1,300);
+insert into marks(14,2,200);
+insert into marks(14,3,400);
+insert into marks(14,4,100);
+
+insert into marks(15,1,600);
+insert into marks(15,2,400);
+insert into marks(15,3,300);
+insert into marks(15,4,200);
+
+insert into marks(16,1,300);
+insert into marks(16,2,100);
+insert into marks(16,3,200);
+insert into marks(16,4,400);
+
+-------------------------
+Create table stud(studid number,studname varchar2(20));
+insert into stud values(1,'Abdul');
+insert into stud values(2,'Arun');
+insert into stud values(3,'Vijay');
+insert into stud values(4,'Savita');
+insert into stud values(5,'Sanjay');
+insert into stud values(6,'Tom');
+
+create table studdob(studid number,dob date);
+insert into studdob values(1,to_date('21112006','ddmmyyyy'));
+insert into studdob values(2,to_date('18102007','ddmmyyyy'));
+insert into studdob values(3,to_date('19092005','ddmmyyyy'));
+insert into studdob values(4,to_date('20112004','ddmmyyyy'));
+
+create table studmarks(studid number,marks number);
+insert into studmarks values(1,'50');
+insert into studmarks values(2,'60');
+insert into studmarks values(5,'70');
+insert into studmarks values(6,'40');
+
+create table studgender(studid number,gender varchar2(10));
+insert into studgender values(1,'M');
+insert into studgender values(3,'M');
+insert into studgender values(4,'F');
+insert into studgender values(6,'M');
+
+---------------------------------------------------------
+create table products(productid number,productname varchar2(10),Price number);
+insert into products values(1,'Laptop',5000);
+insert into products values(2,'Mobile',2000);
+insert into products values(3,'Speaker',1000);
+insert into products values(4,'Mouse',500);
+insert into products values(5,'SSD',2000);
+insert into products values(6,'Charger',200);
+
+create table orders(orderid number,productid number,quantity number);
+insert into orders values(1,1,5);
+insert into orders values(2,2,4);
+insert into orders values(3,3,2);
+insert into orders values(4,4,8);
+insert into orders values(5,7,3);
+insert into orders values(6,8,3);
+
+create table customers(customerid number,customername varchar2(20),orderid number);
+insert into customers values(1,'Arjun',2);
+insert into customers values(2,'Sunil',1);
+insert into customers values(3,'Sony',4);
+insert into customers values(4,'Abdul',3);
+insert into customers values(5,'Suresh',6);
+insert into customers values(6,'Anthony',5);
+
+---Below query will display the number of times space is present in name column
+select name,regexp_count(name,' ')cnt from country
+
+name                    CNT
+UNITED ARAB EMIRATES    2
+INDIA                   0
+UNITED KINGDOM          1
+
+select value name
+from test cross apply string_split(name,',')
+
+----Hackathon Solution-------
+select
+case when level=1 then substr('SQL',level,1) else '*' end f1,
+case when level<=2 then substr('SQL',level,1) else '*' end f2,
+case when level<=3 then substr('SQL',level,1) else '*' end f3
+from dual connect by level<=length('SQL')
+
+F1	F2	F3
+S	S	S
+*	Q	Q
+*	*	L
+--------------------------------
+Q.Write a query to display 
+the total count of records,
+total count of records with subject as Maths,
+total count of records with subject as Phy,
+total count of records with subject as Chem,
+total count of records with result as Pass,
+total count of records with result as Fail
+
+Create table student(id number,name varchar2(10),subject varchar2(10),result varchar2(10));
+insert into student values(1,'A','Maths','Pass');
+insert into student values(1,'A','Phy','Pass');
+insert into student values(1,'A','Chem','Fail');
+insert into student values(1,'A','Chem','Fail');
+insert into student values(2,'B','Maths','Pass');
+insert into student values(2,'B','Phy','Fail');
+insert into student values(2,'B','Chem','Fail');
+insert into student values(3,'C','Maths','Pass');
+insert into student values(3,'C','Phy','Pass');
+insert into student values(3,'C','Chem','Fail');
+
+select count(*),
+sum(case when subject ='Maths' then 1 else 0 end)Maths_count,
+sum(case when subject ='Phy' then 1 else 0 end)Phy_count,
+sum(case when subject ='Chem' then 1 else 0 end)Chem_count,
+sum(case when result ='Fail' then 1 else 0 end)Fail_count,
+sum(case when result = 'Pass' then 1 else 0 end)Pass_count
+from student;
+
+--------CASE IN ORDER BY--------
+--Countries which starts with letter 'I' should be displayed first then countries which starts with 'S' and remaining countries in descending order.
+SELECT * FROM COUNTRY ORDER BY
+CASE 
+WHEN NAME like ('I%') then 1 
+WHEN NAME LIKE ('S%') THEN 2 END,
+NAME DESC
+
+--UPDATE--------------------
+--updating multiple columns in a single query
+create table stud(int number,name varchar2(10),salary number);
+insert into stud values(1,'A',100);
+insert into stud values(2,'B',200);
+insert into stud values(3,'C',300);
+select * from stud;
+update stud 
+set salary = 500,name = 'E'
+where int= 1
+
+In the above query salary and name both are updated in a single query.
+
+----JOINS---
+Create table stud(id number,name varchar2(10));
+insert into stud values(1,'A');
+insert into stud values(NULL,'B');
+insert into stud values(3,NULL);
+insert into stud values(1,NULL);
+insert into stud values(4,'D');
+select * from stud;
+delete from stud;
+
+Create table score(id number,marks varchar2(10));
+insert into score values(1,49);
+insert into score values(NULL,69);
+insert into score values(3,NULL);
+insert into score values(5,'E');
+select * from score;
+
+a)
+What is the output of the below query?
+select a.id,a.name,b.id,b.marks
+from stud a join  score b
+on a.id = b.id
+
+Output:
+ID	NAME	ID	MARKS
+1	A	1	49
+3	 - 	3	 - 
+1	 - 	1	49
+
+From the above output we understood that NULLS are not joined while joining 2 tables.And if same value(e.g 1) is repeated n no. of times then that will
+join with n records.As for example above ID=1 is joined 2 times.
+
+b)
+What is the output of the below query?
+select a.id,a.name,b.id,b.marks
+from stud a left outer join  score b
+on a.id = b.id
+
+As per the below output NULL is also displayed in LEFT OUTER JOIN
+Output:
+ID	NAME	ID	MARKS
+1	A	1	49
+1	 - 	1	49
+3	 - 	3	 - 
+4	D	 - 	 - 
+ - 	B	 - 	 - 
+
+---------ROWNUM---------
+select id,value,rownum from input order by value;
+
+
+ID	VALUE	ROWNUM
+10	a	    1
+20	b	    2
+30	c	    3
+10	d	    4
+20	e	    5
+10	f	    6
+
+--------------ROW_NUMBER------------
+select id,value,row_number()over(partition by id order by value)row_num from input;
+
+ID	VALUE	ROW_NUM
+10	a	    1
+10	d	    2
+10	f	    3
+20	b	    1
+20	e	    2
+30	c	    1
