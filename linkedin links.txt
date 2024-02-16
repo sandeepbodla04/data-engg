@@ -1,0 +1,194 @@
+https://www.linkedin.com/posts/iamanuragsharma17_datamentorship-connectwithme-dataengineering-activity-7160157622543736832-tr4j?utm_source=share&utm_medium=member_desktop
+
+------low latency system-------
+
+https://www.linkedin.com/posts/arslanahmad_systemdesign-distributedsystems-lowlatency-activity-7160143068178837504-mBkb?utm_source=share&utm_medium=member_desktop
+
+------------low level design-------------
+https://www.linkedin.com/posts/ashishps1_topics-you-need-to-study-to-learn-low-level-activity-7160128681657405440-lAai?utm_source=share&utm_medium=member_desktop
+
+
+-------star schema vs snowflake schema-------
+https://www.linkedin.com/posts/ajay026_dataengineering-interviewpreparation-snowflake-activity-7160475924998627328-3iIk?utm_source=share&utm_medium=member_desktop
+
+--------aws de---------------
+https://www.linkedin.com/posts/sachinwadawadgi_data-engineering-tools-tech-services-activity-7160806879160360961-5CJH?utm_source=share&utm_medium=member_desktop
+------data modelling----------
+https://www.linkedin.com/posts/riyakhandelwal_data-modelling-concepts-activity-7160655884933627904-EalD?utm_source=share&utm_medium=member_desktop
+
+1. 🚀 Learn data modelling techniques: one big table vs kimball vs Inmon vs data vault techniques
+
+2. 🧠 Understand spark architecture: How Spark does the processing in a scalable manner.
+
+3. Spark optimization: Predicate Pushdown, partitioning, broadcast, cache&persist, shuffle, Parallelism, Repartition&Coalesce
+
+
+
+
+----------sql--------------
+https://www.linkedin.com/posts/davidkfreitag_sql-dataengineering-activity-7160622017463918592-1MNu?utm_source=share&utm_medium=member_desktop
+𝐄𝐱𝐩𝐥𝐚𝐢𝐧 𝐬𝐨𝐦𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐬𝐩𝐚𝐫𝐤 𝐭𝐫𝐚𝐧𝐬𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧𝐬 𝐮𝐬𝐞𝐝 𝐢𝐧 𝐲𝐨𝐮𝐫 𝐩𝐫𝐨𝐣𝐞𝐜𝐭.
+https://www.linkedin.com/posts/vaishnavi-muralidhar_interviewquestions-dataengineer-projectrelated-activity-7160615636958683136-PG77?utm_source=share&utm_medium=member_desktop
+
+
+-------------protocols------------------
+https://www.linkedin.com/posts/sourabhsahu1_%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F-%3F%3F%3F%3F%3F%3F%3F-activity-7160609012235878401-iq7u?utm_source=share&utm_medium=member_desktop
+-----------azure-------------
+https://www.linkedin.com/posts/deepak-goyal-93805a17_logical-data-warehouse-with-azure-synapse-activity-7160528028958089217-dzLB?utm_source=share&utm_medium=member_desktop
+
+
+------------binary tree---------------------
+https://www.linkedin.com/posts/ashishps1_i-solved-150-binary-tree-leetcode-problems-activity-7160493863290204161-HDPS?utm_source=share&utm_medium=member_desktop
+
+
+---------------spark------------
+https://www.linkedin.com/posts/sachinwadawadgi_spark-keywords-activity-7161167555871584256-Al-K?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/sachinwadawadgi_spark-optimization-activity-7162267880980484097--bC2?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/iamanuragsharma17_onestepanalytics-optimization-spark-activity-7162316827883249664-O0G-?utm_source=share&utm_medium=member_desktop
+
+-----------------data processing-----------------
+https://www.linkedin.com/posts/disha-mukherjee_data-processing-ugcPost-7162020850366377984-vVhL?utm_source=share&utm_medium=member_desktop
+
+
+-------------------data science interview----------------------
+https://www.linkedin.com/posts/danleedata_ab-testing-in-data-science-interviews-by-activity-7162477496653840385-oM5M?utm_source=share&utm_medium=member_desktop
+
+----------------protocols---------------
+https://www.linkedin.com/posts/arslanahmad_12-essential-network-protocols-1-http-activity-7161648438080655360-dP1t?utm_source=share&utm_medium=member_desktop
+
+
+------------------interview(pandas)---------------
+https://www.linkedin.com/posts/asheeshlive_deloitte-interview-questions-ugcPost-7162437597556793345-CcOq?utm_source=share&utm_medium=member_desktop
+
+------------------databricks--------------------
+https://www.linkedin.com/posts/devikrishna-r-%F0%9F%87%AE%F0%9F%87%B3-%F0%9F%92%8E-92085678_databricks-tutorial-3-azure-databricks-activity-7162497508043075584-Odul?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/trraveendra_databricks-sql-dataengineering-activity-7162687070098972672-5qxT?utm_source=share&utm_medium=member_desktop
+
+---------------software design principles--------------
+https://www.linkedin.com/posts/ashishps1_11-software-design-principles-explained-in-activity-7162664166414036993-fSCr?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/ashishps1_people-you-should-follow-on-linkedin-to-learn-activity-7163030559558942720-jG_l?utm_source=share&utm_medium=member_desktop
+
+People you should follow on LinkedIn to learn something new about Software Engineering everyday:
+
+?????????? ????????-?????????? ???????????? ????????????:
+- Hussein Nasser
+- Alex Xu
+- Arpit Bhayani
+- Nikki Siapno
+- Neo K.
+- Arpan G.
+- Saurabh Dashora
+- Alexandre Zajac
+- Arslan Ahmad
+- sukhad anand
+- Gaurav Sen
+- Rocky Bhatia
+- Nelson Djalo
+- Raul Junco
+
+???????????? ?? ???????????? ??????????????????:
+- John Crickett
+- Dr Milan Milanovic
+- Milan Jovanovic
+- Harley Ferguson
+- Petar Ivanov
+- Tiger Abrodi
+- Fernando Franco
+
+???????????? ????????????:
+- Jordan Cutler
+- Ryan Peterman
+- Raviraj Achar
+- Francisco Manuel Soto Ramirez
+- Alex Chiou
+
+?????????? ???????? ??????????????????????:
+- Gina Acosta Gutierrez
+- Brij kishore Pandey
+- Zach Wilson
+
+?????????? ????????????????:
+- Akshay Saini ??
+- Arun M
+
+?????????????? ?????? ???????????? ????????????????????:
+- Navdeep Singh (aka neetcode)
+- Sahil Gaba
+
+???????????????? ?????????????????????? ????????:
+- Alex Nguyen
+- Naveen Rawat
+
+PS: This is in no particular order, all of them are awesome.
+
+Comment other great LinkedIn creators if I missed any.
+
+
+----------------------snowflake--------------------
+https://www.linkedin.com/posts/avinash-s-553378151_snowflake-interview-questions-how-to-activity-7163336049601986560-NBzw?utm_source=share&utm_medium=member_desktop
+----------------------snowflake(clone)--------------------
+https://www.linkedin.com/posts/sachin-mittal-59852543_snowflake-cloning-facts-cloudyard-activity-7162862922283569152-ZLr5?utm_source=share&utm_medium=member_desktop
+
+
+---------------zach wilson--------------
+https://www.linkedin.com/posts/eczachly_dataengineering-datascience-activity-7162945452630269952--MEm?utm_source=share&utm_medium=member_desktop
+
+
+---------------data modelling tutorial--------------
+https://www.linkedin.com/posts/andreas-kretz_dataengineering-datascience-bigdata-activity-7163217742458785792-bGYi?utm_source=share&utm_medium=member_desktop
+
+
+
+---------------apache druid---------------
+https://www.linkedin.com/posts/niteshx2_data-dataengineering-datascience-activity-7163182836907163649-UdWQ?utm_source=share&utm_medium=member_desktop
+
+--------------------datalake----------------
+https://www.linkedin.com/posts/shashank219_datalake-analytics-dataengineering-activity-7163180040862601216-ZcYP?utm_source=share&utm_medium=member_desktop
+
+
+---------------google cloud storage------------
+https://www.linkedin.com/posts/diksha-chourasiya-bb0640150_google-cloud-storage-activity-7162760226046251008-xM9C?utm_source=share&utm_medium=member_desktop
+
+
+
+-------------------------coding patterns---------------
+https://www.linkedin.com/posts/arslanahmad_%3F-%3F%3F%3F%3F%3F%3F-%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F-%3F-activity-7162712137616879616-Hvt2?utm_source=share&utm_medium=member_desktop
+
+-------------------free courses-----------
+https://www.linkedin.com/posts/renu-b-600a5823a_excel-formulas-activity-7163365132444651521-TH2i?utm_source=share&utm_medium=member_desktop
+
+---------------spark and databricks-------------
+https://www.linkedin.com/posts/ram-b95b631a6_spark-databricks-activity-7163929466333716481-bQXN?utm_source=share&utm_medium=member_desktop
+
+
+--------databricks certified data engineer --------------------------
+https://www.linkedin.com/posts/loveekumar-006_databricks-certified-data-engineer-professional-ugcPost-7163863643460227072-ImcB?utm_source=share&utm_medium=member_desktop
+
+
+----------------------------kafka------------------------
+https://www.linkedin.com/posts/ray-rahul_choosing-between-apache-kafka-and-other-activity-7163841906836168704-DpOR?utm_source=share&utm_medium=member_desktop
+
+
+
+-----------------------------------------------AI----------------------------------
+https://www.linkedin.com/posts/shailjamishra-_%3F%3F%3F%3F-%3F%3F-%3F%3F%3F%3F-%3F-%3F%3F%3F%3F%3F-%3F%3F-activity-7163758879988703232-LHpx?utm_source=share&utm_medium=member_desktop
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Some ChatGPT LLD prompts I use while practising, change the requirement and fits well for a lot of cases.
+
+1. give me a low level design of an vending machine. Give me all the use cases, main actors involved and main classes. For each class, give me the methods which can be defined
+
+2. what will be the flows involved
+
+3. what can be the design patterns we can use
+
+4. give me a class diagram using observer design pattern
+
+5. give me the implementation for cancel booking
+
+------------------------------------------------------------------------------------------------------------------------------------------

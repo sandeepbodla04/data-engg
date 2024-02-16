@@ -1,0 +1,232 @@
+learn.datawithdarshil.com
+prashant pandey (udemy)
+techlake
+wafa studies
+deepka goyal
+
+
+
+https://www.linkedin.com/posts/ashishps1_topics-you-need-to-study-to-learn-low-level-activity-7160128681657405440-lAai?utm_source=share&utm_medium=member_desktop
+
+
+-------------protocols------------------
+https://www.linkedin.com/posts/sourabhsahu1_%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F-%3F%3F%3F%3F%3F%3F%3F-activity-7160609012235878401-iq7u?utm_source=share&utm_medium=member_desktop
+
+
+----------------sql-------------------
+https://www.linkedin.com/posts/shubhamwadekar_sql-bigdata-dataengineer-activity-7160981862184583169-0Pqh?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/devikrishna-r-%F0%9F%87%AE%F0%9F%87%B3-%F0%9F%92%8E-92085678_leetcode-sql-activity-7161385957789691904-QbPO?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/riti-nema-707b1719b_sql-placementpreparation-interviewpreparation-activity-7156907123719778304-gKij?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/harshit-bhadiyadra-72919836_50-intermediate-level-sql-questions-1-activity-7160976871357091840-NQRo?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/bikash-deb_sqlpuzzle-activity-7161945452647464960-lIsT?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/shashank219_dataengineering-dataanalytics-sql-activity-7162686758550261760-Doey?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/surbhi-walecha_sqlfuncations-ugcPost-7162999957145292800-cqgq?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/snehakulkarni01_sql-dataanalyst-problemsolving-ugcPost-7163141075962871808-S246?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/vaishnavi-muralidhar_sqlnotes-ugcPost-7163154758797516800-kIK8?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/gauravowlcity_flipkart-sql-analytics-activity-7163519712390230016-9Z8S?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/priyankasgdatanalyst_21dayslearning-21stcenturylearning-day3-activity-7163690907626647553-ymEP?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/snehakulkarni01_hello-data-fam-during-my-exploration-ugcPost-7163902938472464384-eZMf?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/riyakhandelwal_sql-queries-for-practice-activity-7163917399069597696-dYfQ?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/asheeshlive_faang-interview-questions-activity-7163894662750052352-J3Cl?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/devikrishna-r-%F0%9F%87%AE%F0%9F%87%B3-%F0%9F%92%8E-92085678_sql-query-optimisation-for-interviews-activity-7163578460471320576-LQoZ?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/sivananda-reddy-mummadi_cracking-the-sql-interview-for-datascience-ugcPost-7164081356879114240--J71?utm_source=share&utm_medium=member_desktop
+
+-----------insert values into table query-----------
+INSERT INTO EligibilityTransactionStaging (CaseNumber,EligibilityTransactionId,EligibilityRunDate,EligibilityTransactionStartDate,EligibilityTransactionEndDate,SpecialTriggerCode,
+MinimumEDM,MaximumEDM,EDBCInputParameter,IsSupervisorOverride,EDMDataSource,ReportedDate,SrcCreateUserId,SrcCreateDate,SrcUpdateUserId,
+SrcUpdateDate,DataMartCreateUserId,DataMartCreateDate,DataMartUpdateUserId,DataMartUpdateDate)
+select CaseNumber,EligibilityTransactionId,EligibilityRunDate,EligibilityTransactionStartDate,EligibilityTransactionEndDate,SpecialTriggerCode,
+MinimumEDM,MaximumEDM,EDBCInputParameter,IsSupervisorOverride,EDMDataSource,ReportedDate,SrcCreateUserId,SrcCreateDate,SrcUpdateUserId,
+SrcUpdateDate,DataMartCreateUserId,DataMartCreateDate,DataMartUpdateUserId,DataMartUpdateDate
+from [WTONEAGR10B.ONE.OR.GOV\TST2,1442].IEInteractive.dbo.EligibilityTransactionStaging
+
+
+Top 6 places to Master your SQL skills for free.
+
+1. Ankit Bansal
+What you will learn - SQL basics, intermediate, advanced questions, FAANG questions, complex SQL queries
+
+Link to channel: https://lnkd.in/gpapg8Ye
+
+2. Sumit Mittal
+What you will learn - Basic SQL, Advanced Leetcode questions, Big data mock interviews, and big data-related technologies
+
+Link to channel: https://lnkd.in/dFbKfVbv
+
+2. DataLemur 🐒 (Ace the SQL & Data Interview) Nick Singh 📕🐒
+What you will learn - 50+ questions asked in FAANG companies.
+
+Link to channel: https://datalemur.com/
+
+3. Danny Ma
+What you will learn - Tutorials, Real data sets, Basics to advanced questions, 8-week SQL challenge
+
+Link to channel: https://lnkd.in/gfN_D473
+
+4. Pandey Guruji
+What you will learn - Real-time SQL questions, Performance Tuning, Advanced SQL, Tutorials, Guidance
+
+Link to channel: https://lnkd.in/gYYSWReV
+
+5. techTFQ
+What you will learn - beginner to advanced tutorials, advanced concepts, complex queries asked in FAANG, Career guidance through SQL
+
+Link to channel: https://lnkd.in/gDQ_UUZr
+
+6. Mohammad Tanweer khan
+What you will learn - What you will learn - beginner to advanced tutorials, advanced concepts, complex queries asked in interviews, Career guidance through SQL
+
+Link to channel: https://lnkd.in/dWEahvvd
+
+𝐓𝐨𝐩 𝟒 𝐁𝐞𝐬𝐭 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐬 𝐭𝐨 𝐬𝐨𝐥𝐯𝐞 𝐒𝐐𝐋 𝐪𝐮𝐞𝐬𝐭𝐢𝐨𝐧𝐬.
+
+1. HackerRank
+What you will learn - best for beginners, easy to hard questions, star rating
+
+Link to channel: https://lnkd.in/gbYgyBC4
+
+2. LeetCode
+What you will learn - The best platform for anybody, real-time questions, Various methods of solving, beginner to advanced, and many more
+
+Link to channel: https://lnkd.in/dguvsEe7
+
+3. GitHub
+What you will learn - practice 10+ hours SQL resume project for beginner to advanced.
+
+Link to repository: https://lnkd.in/gDimC5s5
+
+4. StrataScratch
+What you will learn - Complex SQL coding questions.
+
+Link to website: https://lnkd.in/dZFCsDEG
+
+𝐓𝐨𝐩 𝟏𝟏 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧 𝐏𝐫𝐨𝐟𝐢𝐥𝐞𝐬 𝐭𝐨 𝐠𝐚𝐢𝐧 𝐢𝐧𝐬𝐢𝐠𝐡𝐭𝐬 𝐚𝐛𝐨𝐮𝐭 𝐒𝐐𝐋 𝐚𝐧𝐝 𝐃𝐚𝐭𝐚 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠.
+
+1. Zach Wilson
+
+2. Brij kishore Pandey
+
+3. Shashank Mishra 🇮🇳
+
+4. Gaurav Agrawal
+
+5. Darshil Parmar
+
+6. Ajay Kadiyala
+
+7. Aditya Sharma
+
+8. Benjamin Rogojan
+
+9. Arockia Liborious
+
+10. Munna Das
+
+11. Riti Nema
+
+Follow - Shubham Wadekar for more Data Engineering related content.
+
+----------------------------------------------------
+
+Websites to practice #sql and ace your data interview:
+
+1️⃣ SQLZoo (https://sqlzoo.net/)
+2️⃣ HackerRank (https://lnkd.in/gnFS4frz)
+3️⃣ LeetCode (https://lnkd.in/gkCpv7NA)
+4️⃣ Strata Scratch (https://lnkd.in/gYtZQY53)
+5️⃣ DataLemur (https://datalemur.com/)
+
+-----------------------------------------------------
+
+
+
+
+networking concepts
+1.love babbar
+2.striver
+3.coding ninjas(parikh jain)
+4.kunal khushwa
+4.vamshi bhavani
+
+
+---------------------------12 types of DB-----------------------
+
+https://www.linkedin.com/posts/ashishps1_12-types-of-databases-and-when-to-use-them-activity-7161216018206396416-5It4?utm_source=share&utm_medium=member_desktop
+
+-------------------------25 CODING PATTERNS----------------------
+https://www.linkedin.com/posts/arslanahmad_coding-intervie-wpatterns-activity-7161386943115628544-LD4-?utm_source=share&utm_medium=member_desktop
+
+------file storage vs object storage--------------
+https://www.linkedin.com/posts/arslanahmad_systemdesign-distributedsystems-storagesolutions-activity-7160924965863624704-hVMn?utm_source=share&utm_medium=member_desktop
+
+
+---------------------AI-------------------
+https://www.linkedin.com/posts/shailjamishra-_datascience-machinelearning-artificialintelligence-activity-7160859872366850048-8XFh?utm_source=share&utm_medium=member_desktop
+
+----------------------SPARK PARTITION SKEW-----------------------
+https://www.linkedin.com/posts/bigdatabysumit_bigdata-dataengineering-apachespark-activity-7161390669914140672-NWtt?utm_source=share&utm_medium=member_desktop
+
+------------------python--------------------------
+https://www.linkedin.com/posts/kandarpa-raghav_datascience-datascientists-dataanalytics-activity-7162950971638181889-ABRw?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/asheeshlive_python-interview-questions-ugcPost-7163176808182366208-OYNh?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/dhirajgupta141_100daysdsachallangeinpython-day8-dsa-activity-7163187488801374208-z8RW?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/kandarpa-raghav_python-coding-interview-questions-activity-7163241993257615362-e7OU?utm_source=share&utm_medium=member_desktop
+
+
+---------------------20bigdata terms--------------
+https://www.linkedin.com/posts/arulkumaran1_0-20-big-data-engineering-terms-that-data-activity-7163497011789385729-VYL1?utm_source=share&utm_medium=member_desktop
+
+
+https://www.java-success.com/00-20-big-data-engineering-terms-that-data-engineers-analysts-scientists-must-know/
+
+https://www.linkedin.com/posts/pooja-jain-898253106_dataengineering-artificialintelligence-cloudcomputing-activity-7163479514335956993-6akd?utm_source=share&utm_medium=member_desktop
+
+-----------------scdtypes-------------------
+https://www.linkedin.com/posts/bhumika-lalchandani_bigdata-dataengineer-dataanalytics-activity-7163453031274012673-w2vf?utm_source=share&utm_medium=member_desktop
+
+---------------------------behavioralround--------------------
+https://www.linkedin.com/posts/hinaaroraa_use-these-chatgpt-prompts-for-interview-preparation-activity-7163388907961757696-wfBX?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/hinaaroraa_use-these-chatgpt-prompts-for-interview-preparation-activity-7163388907961757696-wfBX?utm_source=share&utm_medium=member_desktop
+
+
+----------------------dsa,system design,low level design-----------------
+https://www.linkedin.com/posts/ashishps1_35-months-ago-i-started-putting-coding-activity-7163771504441118721-vOsK?utm_source=share&utm_medium=member_desktop
+
+https://github.com/ashishps1
+
+
+-------------------data storage------------------
+https://www.linkedin.com/posts/ksushant_data-storage-types-activity-7163877772182929408-cNLz?utm_source=share&utm_medium=member_desktop
+
+---------------AI----------
+I.AM.AI
+----------------------
+
+https://codewithgowtham.blogspot.com/
