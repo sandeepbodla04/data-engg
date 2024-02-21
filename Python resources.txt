@@ -51,6 +51,25 @@ https://www.linkedin.com/posts/devikrishna-r-%F0%9F%87%AE%F0%9F%87%B3-%F0%9F%92%
 
 https://www.linkedin.com/posts/sivananda-reddy-mummadi_cracking-the-sql-interview-for-datascience-ugcPost-7164081356879114240--J71?utm_source=share&utm_medium=member_desktop
 
+https://www.linkedin.com/posts/manivannan-murugan-a5b350161_hello-all-solved-one-of-the-most-tricky-ugcPost-7164231989724729344-vNyJ?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/gauravowlcity_sql-sql-analytics-activity-7164114908341583872-SVsm?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/sachintukumar_sql-sqlqueries-100daysofcodechallenge-activity-7087105799658889216-JPWP?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/khan-ayan_sql-date-functions-ugcPost-7164290633287901185-QpNA?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/deependrasingh06_hello-everyone-today-i-would-like-to-share-activity-7165166997234819072-WKsF?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/ray-rahul_sql-database-datamanagement-activity-7165291431035650049-6ycZ?utm_source=share&utm_medium=member_desktop
+
+https://www.linkedin.com/posts/surbhi-walecha_sql-dataanalytics-activity-7165259234027192320--ejK?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/surbhi-walecha_sql-dataanalytics-activity-7165539592924868608-Uj7e?utm_source=share&utm_medium=member_desktop
+
 -----------insert values into table query-----------
 INSERT INTO EligibilityTransactionStaging (CaseNumber,EligibilityTransactionId,EligibilityRunDate,EligibilityTransactionStartDate,EligibilityTransactionEndDate,SpecialTriggerCode,
 MinimumEDM,MaximumEDM,EDBCInputParameter,IsSupervisorOverride,EDMDataSource,ReportedDate,SrcCreateUserId,SrcCreateDate,SrcUpdateUserId,
@@ -60,6 +79,29 @@ MinimumEDM,MaximumEDM,EDBCInputParameter,IsSupervisorOverride,EDMDataSource,Repo
 SrcUpdateDate,DataMartCreateUserId,DataMartCreateDate,DataMartUpdateUserId,DataMartUpdateDate
 from [WTONEAGR10B.ONE.OR.GOV\TST2,1442].IEInteractive.dbo.EligibilityTransactionStaging
 
+
+🔳 Table - Orders
+Columns - Order_id, cust_ID, city_id, order_date, order_status(placed, cancelled) ,order_value
+
+❓ Identify the top 3 customers who have the highest average order value?
+
+😎 Method 1 ( without window function )
+SELECT cust_ID, AVG(order_value) AS avg_order_value
+FROM Orders
+WHERE order_status = 'placed'
+GROUP BY cust_ID
+ORDER BY avg_order_value DESC
+LIMIT 3;
+
+😎 Method 2 ( with window function )
+SELECT DISTINCT cust_ID, 
+    AVG(order_value) OVER (PARTITION BY cust_ID) AS avg_order_value
+FROM Orders
+WHERE order_status = 'placed'
+ORDER BY avg_order_value DESC
+LIMIT 3;
+
+Did you notice the difference between the solutions??
 
 Top 6 places to Master your SQL skills for free.
 
@@ -230,3 +272,74 @@ I.AM.AI
 ----------------------
 
 https://codewithgowtham.blogspot.com/
+
+
+------------monkey patching in python-----------------
+---------------------apple DE Interview--------------------------------
+https://www.linkedin.com/posts/ankita-gulati-14631714b_apple-dataengineering-dataengineer-activity-7164226916743409665-zOMr?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/riyakhandelwal_pyspark-funcamentals-activity-7164272230602846208-MLoH?utm_source=share&utm_medium=member_desktop
+
+
+https://www.java-success.com/
+
+
+-------------------------DE DATA FLAIR(WEBSITE)------------------------------------
+
+
+-----------------------DE,ML,DS------------------
+https://www.linkedin.com/posts/pooja-jain-898253106_dataengineering-machinelearning-datascience-activity-7164586366100602880-adSc?utm_source=share&utm_medium=member_desktop
+
+----------------------------------------Resume,interview calls-----------------
+https://www.linkedin.com/posts/deepak-goyal-93805a17_not-getting-interview-calls-try-these-hacks-activity-7164453410790928384-ZspT?utm_source=share&utm_medium=member_desktop
+
+
+----------------------------DSA------------------------------
+MYCODESCHOOL(WEBSITE)
+
+
+
+
+
+https://www.linkedin.com/posts/dhirajgupta141_interview-pyspark-sql-activity-7164846309210800128--PjW?utm_source=share&utm_medium=member_desktop
+
+
+
+
+-----------------------------GIT----------------------------
+https://www.linkedin.com/posts/staylearner-krishna-agrawal_git-interview-questions-and-answers-ugcPost-7165187174877806592-UMkW?utm_source=share&utm_medium=member_desktop
+
+
+---------------python-----------------
+list,set,tuple,dictionary
+file handling
+exception handling
+collections,counters,namedtuple,orderdict
+decorators,list comprehension
+pandas
+oops
+loops conditional
+json loads,json dumps,json load,json dumps
+generators,yield,return
+udf
+python exploratort data analysis libraries
+
+
+
+---------------------------python lambda functions-----------------------
+
+https://www.linkedin.com/posts/bhumika-lalchandani_pythonfordata-dataengineering-functionalprogramming-activity-7165196873513746432-GnSK?utm_source=share&utm_medium=member_desktop
+
+
+
+--------------DSA------------------------------
+SAHIL AGRAWAL(DE SHAW) AND KN ACADEMY
+---------------------recursion(lead coding by fraz)----------------------
+top 50 string coding problems for interview by geeksforgeeks
+binary search (striver)
+tree(striver)
+hashmap(babbr and leetcode explore)
+priority queue and heap(1.abdul bari,2.babbar and 3.top 50 coding problems on heaps geeks for geeks)
+trie
+
