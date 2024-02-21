@@ -192,3 +192,108 @@ Some ChatGPT LLD prompts I use while practising, change the requirement and fits
 5. give me the implementation for cancel booking
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------Machine Learning------------------
+https://www.linkedin.com/posts/aditi-khinvasara-bb99601aa_how-often-do-you-think-about-the-inner-workings-activity-7164213604282580995-nr7A?utm_source=share&utm_medium=member_desktop
+
+-----------------------------------------------------chat GPT--------------------------------------
+
+
+These 10 ChatGPT prompts help you to crack tough interview questions:
+
+1. Why are you interested in this position?
+
+Prompt: "Provide an example of how to express interest in a software engineering position at a tech startup."
+
+2. Tell me about yourself.
+
+Prompt: "How do I construct a concise and impactful 'tell me about yourself' answer for an interview?"
+
+3. What is your greatest strength?
+
+Prompt: "What's a good way to frame problem-solving as a strength in an interview?"
+
+4. Can you describe your experience with __?
+
+Prompt: "How can I effectively communicate my experience with project management in an interview?"
+
+5. Why are you looking to leave your current role?
+
+Prompt: "Give an example of a professional and positive reason for leaving a current job."
+
+6. What is your greatest weakness?
+
+Prompt: "How can I discuss a weakness in a constructive way during an interview?"
+
+7. Where do you see yourself in five years?
+
+Prompt: "How can I answer the 'where do you see yourself in five years' question in a way that shows ambition but also a commitment to the company?"
+
+8. Can you tell me about a time when you overcame a challenge at work?
+
+Prompt: "Help me structure a response to a question about overcoming work challenges using the STAR method."
+
+9. Do you have any questions for us?
+
+Prompt: "What are some thoughtful questions I can ask an interviewer about the company culture and growth opportunities?"
+
+10. Why should we hire you?
+
+Prompt: "Can you provide an example of a persuasive answer to 'Why should we hire you?' for a data analyst position?"
+
+--------------------------------------------------------------------------------
+
+
+
+https://www.linkedin.com/posts/thebigdatashow_interviews-dataengineering-bigdata-activity-7164181650967347201-ARUY?utm_source=share&utm_medium=member_desktop
+
+
+---------------------oops--------------------
+https://www.linkedin.com/posts/shraddha-bharuka_top-oops-interview-questions-and-answers-ugcPost-7165331980581040129-aqMj?utm_source=share&utm_medium=member_desktop
+
+
+--------spark--------------------
+https://www.linkedin.com/posts/riyakhandelwal_reading-writing-to-sql-using-databricks-activity-7165306550163587072-Aie3?utm_source=share&utm_medium=member_desktop
+
+
+---------------------git------------------------
+https://www.linkedin.com/posts/activity-7165175017188671488-uiIT?utm_source=share&utm_medium=member_desktop
+
+---------------------------------azure DE Interview ----------------------------------------
+https://www.linkedin.com/posts/namanseth_dataengineering-interviewquestions-techtalks-activity-7165004517833359361-84Yi?utm_source=share&utm_medium=member_desktop
+
+-----------------delta lake---------------------
+https://www.linkedin.com/posts/riyakhandelwal_all-you-need-to-know-about-delta-lake-activity-7165366930055385089-tYdY?utm_source=share&utm_medium=member_desktop
+
+--------------methods------------------
+https://www.linkedin.com/posts/aditi-khinvasara-bb99601aa_methods-in-python-programming-check-out-activity-7164904267936395264--Bj7?utm_source=share&utm_medium=member_desktop
+
+
+------------------powerBI---------------------
+https://www.linkedin.com/posts/ksushant_power-bi-ebook-activity-7165580152561754112-kjVd?utm_source=share&utm_medium=member_desktop
+
+--------------------types of logs---------------------
+https://www.linkedin.com/posts/hinaaroraa_9-essential-log-types-explained-1authentication-activity-7165563231606886400-rUOI?utm_source=share&utm_medium=member_desktop
+
+
+----------------------------azure interview questions--------------
+https://www.linkedin.com/posts/deepak-goyal-93805a17_list-of-all-azure-data-devops-ml-interview-activity-7165603074185576448-Ut9Q?utm_source=share&utm_medium=member_desktop
+
+
+-----------------------kafka-----------------------------------------
+
+
+ByteByteGo
+2 hours ago
+Top 5 Kafka use cases
+
+Kafka was originally built for massive log processing. It retains messages until expiration and lets consumers pull messages at their own pace.
+
+Let's review the popular Kafka use cases.
+
+- Log processing and analysis
+- Data streaming in recommendations
+- System monitoring and alerting
+- CDC (Change data capture)
+- System migration
