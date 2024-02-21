@@ -1,0 +1,87 @@
+**Normalization:**
+
+Normalization is a database design technique that organizes data in a way to reduce data redundancy and improve data integrity. The goal is to structure the database in such a way that data is stored logically, without unnecessary duplication. This is achieved by breaking down large tables into smaller, related tables and establishing relationships between them.
+
+There are several normal forms (such as 1NF, 2NF, 3NF, and so on), each addressing specific types of data redundancy and dependencies.
+
+**Example of Normalization:**
+
+Consider a denormalized table for a company with employee information:
+
+```plaintext
+Employee Table
+| EmployeeID | EmployeeName | Department | DepartmentLocation |
+|------------|--------------|------------|---------------------|
+| 101        | John Smith   | HR         | New York            |
+| 102        | Jane Doe     | IT         | San Francisco       |
+| 103        | Bob Johnson  | HR         | New York            |
+```
+
+In this table, we have redundancy in the "Department" and "DepartmentLocation" columns for employees in the same department. Normalization would involve breaking this table into separate tables, such as an "Employees" table and a "Departments" table:
+
+```plaintext
+Employees Table
+| EmployeeID | EmployeeName | DepartmentID |
+|------------|--------------|--------------|
+| 101        | John Smith   | 1            |
+| 102        | Jane Doe     | 2            |
+| 103        | Bob Johnson  | 1            |
+
+Departments Table
+| DepartmentID | Department      | DepartmentLocation |
+|--------------|-----------------|---------------------|
+| 1            | HR              | New York            |
+| 2            | IT              | San Francisco       |
+```
+
+Now, we have eliminated redundancy by having a separate table for departments. The "DepartmentID" in the "Employees" table is a foreign key that establishes a relationship with the "Departments" table.
+
+---
+
+**Denormalization:**
+
+Denormalization is the process of deliberately introducing redundancy into a database by combining tables. This is often done to improve query performance, simplify data retrieval, and reduce the need for complex joins. While it sacrifices some aspects of data integrity, it can be beneficial in scenarios where read performance is a higher priority than data modification.
+
+**Example of Denormalization:**
+
+Let's take the normalized "Employees" and "Departments" tables from the previous example. In a denormalized version, you might combine them into a single table:
+
+```plaintext
+Denormalized Employees Table
+| EmployeeID | EmployeeName | Department      | DepartmentLocation |
+|------------|--------------|-----------------|---------------------|
+| 101        | John Smith   | HR              | New York            |
+| 102        | Jane Doe     | IT              | San Francisco       |
+| 103        | Bob Johnson  | HR              | New York            |
+```
+
+In this denormalized table, there is redundancy because department information is repeated for each employee. While this simplifies querying (no need for joins), it comes at the cost of data redundancy and potential inconsistencies.
+
+---
+
+In summary, normalization and denormalization are two opposing database design strategies. Normalization aims to reduce redundancy and improve data integrity, while denormalization introduces redundancy to enhance query performance. The choice between them depends on the specific requirements and priorities of a given application or system.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+In the context of the statement "Normalization is a database design technique that organizes data in a way to reduce data redundancy and improve data integrity," let's focus on the term "data integrity."
+
+**Data Integrity:**
+- Data integrity refers to the accuracy, consistency, and reliability of data in a database. It ensures that data is both valid and reliable throughout its lifecycle, from creation and storage to retrieval and manipulation.
+
+In the context of normalization:
+
+- **Reducing Data Redundancy:** One of the primary goals of normalization is to eliminate or minimize data redundancy. Redundancy can lead to inconsistencies and inaccuracies if data is duplicated and not updated consistently across the database.
+
+- **Improving Data Integrity:** By reducing redundancy and organizing data into normalized tables with well-defined relationships, data integrity is improved. Updates, insertions, and deletions are less prone to anomalies, ensuring that the data remains accurate and consistent.
+
+In simpler terms:
+
+- **Imagine a Library Database:**
+  - If you have a database that stores information about books and authors, normalization would involve organizing the data so that each piece of information (e.g., author details) is stored in only one place. This prevents conflicting information and ensures that if an author's details change, it is updated in one place, maintaining the accuracy and consistency of the data.
+
+- **Preventing Errors and Inconsistencies:**
+  - Data integrity is crucial to prevent errors, inconsistencies, and inaccuracies in a database. By normalizing the data, you're applying a set of rules that help maintain the quality and reliability of the information stored.
+
+In summary, when the statement mentions "improve data integrity," it means that normalization is a technique used to organize data in a way that enhances the accuracy, consistency, and reliability of the information stored in a database.

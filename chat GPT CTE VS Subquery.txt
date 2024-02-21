@@ -1,0 +1,78 @@
+In SQL, both Common Table Expressions (CTEs) and subqueries are powerful tools for organizing and manipulating data. The choice between them often depends on the specific use case, readability, and the performance characteristics of the database engine. Let's explore the differences and consider their performance.
+
+### Subquery:
+
+```sql
+SELECT column1, column2
+FROM table1
+WHERE column3 = (SELECT MAX(column3) FROM table1);
+```
+
+### CTE (Common Table Expression):
+
+```sql
+WITH MaxColumn3 AS (
+    SELECT MAX(column3) AS max_column3
+    FROM table1
+)
+SELECT column1, column2
+FROM table1
+WHERE column3 = (SELECT max_column3 FROM MaxColumn3);
+```
+
+### Performance Considerations:
+
+1. **Readability:**
+   - **Subquery:** Subqueries are embedded within the main query, making them concise but potentially harder to read, especially with complex queries.
+   - **CTE:** CTEs allow you to separate the logical parts of a query, enhancing readability. The CTE's purpose is defined before it's used in the main query.
+
+2. **Code Reusability:**
+   - **Subquery:** Subqueries are specific to the query in which they are used.
+   - **CTE:** CTEs can be reused across multiple queries within the same script.
+
+3. **Performance:**
+   - **Database Engine:**
+     - The performance difference between CTEs and subqueries can vary based on the specific database engine being used.
+   - **Optimization:**
+     - In many modern database systems, the query optimizer can often generate similar execution plans for well-structured queries with CTEs or subqueries.
+
+### Example Scenario:
+
+Consider a scenario where you want to retrieve details of employees who have salaries greater than the average salary in their respective departments.
+
+**Using Subquery:**
+
+```sql
+SELECT employee_id, employee_name, salary, department_id
+FROM employees e
+WHERE salary > (SELECT AVG(salary) FROM employees WHERE department_id = e.department_id);
+```
+
+**Using CTE:**
+
+```sql
+WITH DepartmentAvgSalaries AS (
+    SELECT department_id, AVG(salary) AS avg_salary
+    FROM employees
+    GROUP BY department_id
+)
+SELECT e.employee_id, e.employee_name, e.salary, e.department_id
+FROM employees e
+JOIN DepartmentAvgSalaries d
+    ON e.department_id = d.department_id
+WHERE e.salary > d.avg_salary;
+```
+
+In this example, both the subquery and the CTE achieve the same result. The CTE version provides a bit more clarity in terms of separating the calculation of average salaries per department from the main query.
+
+### Conclusion:
+
+- **Best Practices:**
+  - Use the approach that enhances code readability and maintainability.
+  - Test the performance with your specific database engine and dataset to make informed decisions.
+  - Consider the optimization capabilities of the database engine.
+
+- **Flexibility:**
+  - In many cases, the choice between CTEs and subqueries comes down to personal or team preferences, as well as specific requirements of the query.
+
+Always consider the specific characteristics of your data, the requirements of your query, and the capabilities of your database engine when deciding between CTEs and subqueries.
