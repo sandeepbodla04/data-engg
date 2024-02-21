@@ -1,0 +1,51 @@
+1
+I'll explain the LEVEL clause in SQL, focusing on its use in hierarchical queries:
+
+What it is:
+
+The LEVEL clause is a pseudocolumn, meaning it's not a real column in a table but a value generated during query execution.
+It's used in conjunction with hierarchical queries to indicate the hierarchical level of each row in the result set.
+It's primarily found in Oracle databases, but some other databases have similar functionality using different syntax.
+How it works:
+
+Start with the CONNECT BY clause: This clause defines the relationship between parent and child rows in the hierarchy.
+Use LEVEL within the SELECT statement: The LEVEL clause assigns a numerical value to each row, representing its depth in the hierarchy:
+Root rows have a LEVEL of 1.
+Child rows have a LEVEL one greater than their parent row.
+Example:
+
+Consider a table containing employee data, including a self-referential MANAGER_ID column:
+
+SQL
+SELECT employee_id, manager_id, level
+FROM employees
+START
+ 
+WITH manager_id IS
+ 
+NULL
+
+CONNECT
+ 
+BY PRIOR employee_id = manager_id;
+Use code with caution. Learn more
+This query does the following:
+
+Starts with employees who have no manager (root of the hierarchy).
+Connects each employee to their manager (based on MANAGER_ID).
+Displays the employee ID, manager ID, and hierarchical level for each row.
+Output:
+
+EMPLOYEE_ID  MANAGER_ID  LEVEL
+-----------  ----------  ------
+100          NULL        1     (Root employee)
+101          100         2     (Employee reporting to 100)
+102          101         3     (Employee reporting to 101)
+103          100         2     (Another employee reporting to 100)
+Additional points:
+
+You can use LEVEL in other parts of the query, such as ORDER BY or WHERE clauses.
+Some databases have extensions to LEVEL, like CONNECT_BY_ROOT for accessing root values.
+If you're not using Oracle, check your database's documentation for similar functionality.
+Sources
+github.com/Mickai55/FMI-Unibuc-Homework

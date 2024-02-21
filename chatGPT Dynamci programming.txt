@@ -1,0 +1,40 @@
+// Function to calculate the nth Fibonacci number using dynamic programming
+int fibonacci(int n) {
+    // Create a vector to store previously calculated Fibonacci numbers
+    std::vector<int> fib(n + 1, 0);
+
+    // Base cases
+    fib[0] = 0;
+    fib[1] = 1;
+
+    // Calculate Fibonacci numbers from the bottom up
+    for (int i = 2; i <= n; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    // Return the nth Fibonacci number
+    return fib[n];
+}
+
+int main() {
+    // Example: Calculate the 6th Fibonacci number
+    int result = fibonacci(6);
+
+    // Output the result
+    std::cout << "The 6th Fibonacci number is: " << result << std::endl;
+
+    return 0;
+}
+
+Certainly! The line `std::vector<int> fib(n + 1, 0);` is creating a vector named `fib` of integers (`int`). Let's break down the components of this line:
+
+1. **`std::vector<int>`:**
+   - `std::vector` is a C++ standard template library (STL) container that represents a dynamic array.
+   - `<int>` specifies that the vector will store integers.
+
+2. **`fib(n + 1, 0)`:**
+   - `fib` is the name of the vector.
+   - `(n + 1)` sets the initial size of the vector to be `n + 1` elements. This is because we want to store Fibonacci numbers from 0 to n, so we need space for n + 1 numbers.
+   - `, 0` initializes all elements of the vector to 0.
+
+So, this line is creating a vector called `fib` that can hold integers, initializing it with a size of `n + 1`, and setting all elements to 0. This vector will be used to store the results of previously calculated Fibonacci numbers during the dynamic programming process, preventing redundant computations by reusing stored values.

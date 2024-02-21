@@ -1,0 +1,55 @@
+In object-oriented programming, an interface is a blueprint for a set of related methods that a class must implement. It defines a contract specifying what methods a class must have without providing the implementation details. An interface allows multiple classes to share a common set of methods, promoting code reusability and a structured approach to programming.
+
+Here's a simple explanation of an interface with an example:
+
+**Example: USB Interface**
+
+Think of an interface as a standard set of connectors and functions that different electronic devices need to support to work with your computer, like a USB (Universal Serial Bus) interface.
+
+1. **USB Interface (Interface Definition):** The USB standard defines a set of methods (functions) that a device must support. These methods include connecting, transferring data, and disconnecting.
+
+2. **Devices Implementing the USB Interface (Classes):** Various devices (e.g., keyboard, mouse, printer, external hard drive) implement the USB interface. Each device provides its implementation for the methods defined in the USB standard.
+
+Here's how it translates to code in a programming language like Java:
+
+```java
+// Define a USB interface
+interface USB {
+    void connect();    // Method to connect the device
+    void transferData();  // Method to transfer data
+    void disconnect();   // Method to disconnect the device
+}
+
+// Classes implementing the USB interface
+class USBKeyboard implements USB {
+    public void connect() {
+        System.out.println("USB keyboard connected.");
+    }
+
+    public void transferData() {
+        System.out.println("Transferring keyboard data.");
+    }
+
+    public void disconnect() {
+        System.out.println("USB keyboard disconnected.");
+    }
+}
+
+class USBMouse implements USB {
+    public void connect() {
+        System.out.println("USB mouse connected.");
+    }
+
+    public void transferData() {
+        System.out.println("Transferring mouse data.");
+    }
+
+    public void disconnect() {
+        System.out.println("USB mouse disconnected.");
+    }
+}
+```
+
+In this example, the `USB` interface defines the methods that any device implementing it must provide. The `USBKeyboard` and `USBMouse` classes implement this interface, providing their own specific implementations for connecting, transferring data, and disconnecting.
+
+Using interfaces allows you to interact with different devices through a common set of methods, just as you can plug various USB devices into your computer's USB ports. It promotes code consistency and makes it easier to work with diverse classes that share a common behavior.
